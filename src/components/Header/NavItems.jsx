@@ -1,12 +1,25 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { falloutLogo } from "../../constants/imgs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faGamepad,
+  faChevronRight,
+  faImage,
+  faInfo,
+  faRegistered
+} from "@fortawesome/free-solid-svg-icons";
 
-const NavItems = ({ options, games }) => {
+// I KNOW, i complicated this VERY MUCH, there are better ways but i'm having fun doing it this way.
+
+const NavItems = ({ options, games, dropdown, handleDropdown }) => {
+  const icons = [faHome, faGamepad, faImage, faInfo, faRegistered];
+
   const insertGames = () => (
-    <div className="">
-      <ul>
+    <div className={dropdown ? "games-container show" : "games-container"}>
+      <ul className="games__container--list">
         {games.map(game => (
-          <li className="">{game}</li>
+          <li className="item">{game}</li>
         ))}
       </ul>
     </div>
@@ -17,14 +30,24 @@ const NavItems = ({ options, games }) => {
       <li>
         <img src={falloutLogo} alt="" className="img" />
       </li>
-      {options.map(option =>
+      {options.map((option, index) =>
         option === "juegos" ? (
-          <li className="nav__list--item">
-            {option}
+          <Fragment>
+            <li className="nav__list--item" onClick={handleDropdown}>
+              <FontAwesomeIcon style={{ width: "40px" }} icon={icons[index]} />
+              {option}
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                className={dropdown ? "chevron active" : "chevron"}
+              />
+            </li>
             {insertGames()}
-          </li>
+          </Fragment>
         ) : (
-          <li className="nav__list--item">{option}</li>
+          <li className="nav__list--item">
+            <FontAwesomeIcon style={{ width: "40px" }} icon={icons[index]} />
+            {option}
+          </li>
         )
       )}
     </ul>

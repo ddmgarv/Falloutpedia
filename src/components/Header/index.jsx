@@ -5,9 +5,20 @@ import NavItems from "./NavItems";
 import Loader from "../Utilities/Loader";
 import "./header.scss";
 class Header extends Component {
+  state = {
+    dropdown: false
+  };
   componentDidMount() {
     this.props.getOptions();
   }
+  handleDropdown = () => {
+    const { state } = this;
+    const { dropdown } = this.state;
+    this.setState({
+      ...state,
+      dropdown: !dropdown
+    });
+  };
   renderOptions() {
     const {
       loading,
@@ -15,6 +26,8 @@ class Header extends Component {
       navData: { games, options },
       navData
     } = this.props;
+    const { dropdown } = this.state;
+
     if (loading) {
       return (
         <div className="centered-container-full">
@@ -22,7 +35,14 @@ class Header extends Component {
         </div>
       );
     } else if (Object.keys(navData).length > 0) {
-      return <NavItems games={games} options={options} />;
+      return (
+        <NavItems
+          games={games}
+          options={options}
+          dropdown={dropdown}
+          handleDropdown={this.handleDropdown}
+        />
+      );
     } else if (error !== "") {
       return "Error";
     }

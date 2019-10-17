@@ -1,6 +1,6 @@
-@import "../../colors.scss";
+@import "../../constants.scss";
 .nav {
-  width: 18em;
+  width: 18rem;
   .nav__container {
     background-color: $secondaryColor;
     width: inherit;
@@ -19,9 +19,45 @@
         align-items: center;
         text-transform: capitalize;
         font-weight: 500;
+        position: relative;
+        cursor: pointer;
         &:hover {
           background-color: $primaryColor;
           color: #fff;
+        }
+        .chevron {
+          margin-left: 120px;
+          transition: transform 0.45s;
+          &.active {
+            transition: transform 0.45s;
+            transform: rotate(90deg);
+          }
+        }
+      }
+      .games-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        .games__container--list {
+          padding: 0;
+          padding-left: 65px;
+          .item {
+            list-style-type: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 3px 12px;
+            text-transform: capitalize;
+            width: 150px;
+            &:hover {
+              background-color: $primaryColor;
+              color: #fff;
+              border-radius: $radius;
+            }
+          }
+        }
+        &.show {
+          max-height: 215px;
+          transition: all 0.5s;
         }
       }
       .nav__list--item:nth-child(2) {
