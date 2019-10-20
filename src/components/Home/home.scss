@@ -1,0 +1,50 @@
+@import "../../constants.scss";
+
+.home {
+  margin-left: 7.5rem;
+  width: 100%;
+  .home__container {
+    border: 1px solid #fff;
+    background-image: url(../../assets/img/fwp5.jpg);
+    background-size: cover;
+    border-radius: $radius;
+    height: 100%;
+    padding: 0.3% 25% 1% 1%;
+    margin-right: 5%;
+    .home__container--items {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      p {
+        padding: 0;
+        width: 100%;
+        color: $secondaryColor;
+        padding-left: 25px;
+      }
+      img {
+        width: 350px;
+        height: 200px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .home {
+    margin-left: 0;
+    .home__container {
+      .home__container--items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        p {
+          padding: 0;
+        }
+        img {
+          width: 90%;
+          height: 200px;
+        }
+      }
+    }
+  }
+}

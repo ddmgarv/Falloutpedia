@@ -3,14 +3,17 @@ import { connect } from "react-redux";
 import * as optionsActions from "../../actions/optionsActions";
 import NavItems from "./NavItems";
 import Loader from "../Utilities/Loader";
-import "./header.scss";
-class Header extends Component {
+import "./nav.scss";
+
+class Nav extends Component {
   state = {
     dropdown: false
   };
+
   componentDidMount() {
     this.props.getOptions();
   }
+
   handleDropdown = () => {
     const { state } = this;
     const { dropdown } = this.state;
@@ -19,6 +22,7 @@ class Header extends Component {
       dropdown: !dropdown
     });
   };
+
   renderOptions() {
     const {
       loading,
@@ -31,7 +35,7 @@ class Header extends Component {
     if (loading) {
       return (
         <div className="centered-container-full">
-          <Loader color={"#98ca3f"} />
+          <Loader color={"#7d5a0d"} />
         </div>
       );
     } else if (Object.keys(navData).length > 0) {
@@ -49,7 +53,7 @@ class Header extends Component {
   }
   render() {
     return (
-      <nav className="nav">
+      <nav className="nav__wrapper">
         <div className="nav__container">{this.renderOptions()}</div>
       </nav>
     );
@@ -61,4 +65,4 @@ const mapStateToProps = reducers => reducers.optionsReducer;
 export default connect(
   mapStateToProps,
   optionsActions
-)(Header);
+)(Nav);

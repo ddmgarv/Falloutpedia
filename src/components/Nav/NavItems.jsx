@@ -9,7 +9,7 @@ import {
   faInfo,
   faRegistered
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 // I KNOW, i complicated this VERY MUCH, there are better ways but i'm having fun doing it this way.
 
 const NavItems = ({ options, games, dropdown, handleDropdown }) => {
@@ -34,19 +34,26 @@ const NavItems = ({ options, games, dropdown, handleDropdown }) => {
         option === "juegos" ? (
           <Fragment>
             <li className="nav__list--item" onClick={handleDropdown}>
-              <FontAwesomeIcon style={{ width: "40px" }} icon={icons[index]} />
-              {option}
-              <FontAwesomeIcon
-                icon={faChevronRight}
-                className={dropdown ? "chevron active" : "chevron"}
-              />
+              <Link>
+                <FontAwesomeIcon
+                  style={{ width: "40px" }}
+                  icon={icons[index]}
+                />
+                {option}
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  className={dropdown ? "chevron active" : "chevron"}
+                />
+              </Link>
             </li>
             {insertGames()}
           </Fragment>
         ) : (
           <li className="nav__list--item">
-            <FontAwesomeIcon style={{ width: "40px" }} icon={icons[index]} />
-            {option}
+            <Link to={`/${option}`}>
+              <FontAwesomeIcon style={{ width: "40px" }} icon={icons[index]} />
+              {option}
+            </Link>
           </li>
         )
       )}
