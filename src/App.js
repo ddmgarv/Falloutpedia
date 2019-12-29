@@ -1,18 +1,19 @@
 import React from "react";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-
+import PowerArmor from "./components/PowerArmor";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
 
 function App() {
   return (
-    <div className="d-flex align-items-center">
+    <main className="app">
       <BrowserRouter>
         <Nav />
         <Route path={"/inicio"} component={Home} />
+        <Route path={"/power armor"} component={PowerArmor} />
       </BrowserRouter>
-    </div>
+    </main>
   );
 }
 

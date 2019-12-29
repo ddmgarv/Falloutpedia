@@ -6,7 +6,9 @@ class Home extends Component {
   insertContent() {
     return home.map(item => (
       <div className="home__container--items">
-        <img src={item.img} alt="fallout background" />
+        <div>
+          <img src={item.img} alt="fallout background" />
+        </div>
         <p>{item.p}</p>
       </div>
     ));

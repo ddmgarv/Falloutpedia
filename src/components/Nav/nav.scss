@@ -3,11 +3,12 @@
   width: 18rem;
   background-color: transparent;
   .nav__container {
-    background-color: rgba($color: #000, $alpha: 0.65);
-    width: inherit;
+    background-color: $background-wrapper;
     position: fixed;
+    width: inherit;
     top: 0;
     bottom: 0;
+    left: 0;
     .nav__list {
       list-style-type: none;
       padding: 0;
@@ -19,7 +20,6 @@
         text-transform: capitalize;
         font-weight: 500;
         position: relative;
-
         a {
           display: flex;
           align-items: center;

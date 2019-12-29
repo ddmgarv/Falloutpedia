@@ -10,7 +10,6 @@ import {
   faRegistered
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-// I KNOW, i complicated this VERY MUCH, there are better ways but i'm having fun doing it this way.
 
 const NavItems = ({ options, games, dropdown, handleDropdown }) => {
   const icons = [faHome, faGamepad, faImage, faInfo, faRegistered];

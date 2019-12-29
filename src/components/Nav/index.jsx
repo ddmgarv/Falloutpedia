@@ -15,8 +15,10 @@ class Nav extends Component {
   }
 
   handleDropdown = () => {
-    const { state } = this;
-    const { dropdown } = this.state;
+    const {
+      state,
+      state: { dropdown }
+    } = this;
     this.setState({
       ...state,
       dropdown: !dropdown
@@ -62,7 +64,4 @@ class Nav extends Component {
 
 const mapStateToProps = reducers => reducers.optionsReducer;
 
-export default connect(
-  mapStateToProps,
-  optionsActions
-)(Nav);
+export default connect(mapStateToProps, optionsActions)(Nav);

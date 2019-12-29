@@ -1,15 +1,15 @@
 @import "../../constants.scss";
 
 .home {
-  margin-left: 7.5rem;
-  width: 100%;
+  margin: $margin-wrapper-xl;
+  width: $width-wrapper-xl;
   .home__container {
     border: 1px solid #fff;
     background-image: url(../../assets/img/fwp5.jpg);
     background-size: cover;
     border-radius: $radius;
+    padding: $padding-wrapper-xl;
     height: 100%;
-    padding: 0.3% 25% 1% 1%;
     margin-right: 5%;
     .home__container--items {
       display: flex;
@@ -22,7 +22,7 @@
         padding-left: 25px;
       }
       img {
-        width: 350px;
+        width: 325px;
         height: 200px;
       }
     }

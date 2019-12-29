@@ -10,6 +10,10 @@ import fwp6 from "../assets/img/fwp6.jpg";
 import fwp7 from "../assets/img/fwp7.jpg";
 import fwpp from "../assets/img/fwpp.jpg";
 import fwppi from "../assets/img/fwppi.jpg";
+import T_45 from "../assets/img/T-45.jpg";
+import T_51 from "../assets/img/T-51.jpg";
+import T_60 from "../assets/img/T-60.jpg";
+import X_01 from "../assets/img/X-01.jpg";
 import f1i1 from "../assets/img/paraGaleria/fallout1/f1i1.jpg";
 import f1i2 from "../assets/img/paraGaleria/fallout1/f1i2.jpg";
 import f1i3 from "../assets/img/paraGaleria/fallout1/f1i3.jpg";
@@ -39,5 +43,9 @@ export {
   f2i2,
   f2i3,
   f3i1,
-  f3i2
+  f3i2,
+  T_45,
+  T_51,
+  T_60,
+  X_01
 };
