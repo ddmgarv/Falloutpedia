@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Route path={"/inicio"} component={Home} />
-        <Route path={"/power armor"} component={PowerArmor} />
+        <Route path={"/power%20armor"} component={PowerArmor} />
       </BrowserRouter>
     </main>
   );
