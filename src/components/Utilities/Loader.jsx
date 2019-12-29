@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Style } from "react-style-tag";
 const Loader = ({ color }) => (
   <Fragment>
-    <div class="lds-dual-ring"></div>
+    <div className="lds-dual-ring"></div>
     <Style>
       {`
             .lds-dual-ring {

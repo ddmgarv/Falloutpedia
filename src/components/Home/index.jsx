@@ -4,8 +4,8 @@ import "./home.scss";
 
 class Home extends Component {
   insertContent() {
-    return home.map(item => (
-      <div className="home__container--items">
+    return home.map((item, index) => (
+      <div className="home__container--items" key={index}>
         <div>
           <img src={item.img} alt="fallout background" />
         </div>

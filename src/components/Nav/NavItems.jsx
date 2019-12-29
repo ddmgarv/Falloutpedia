@@ -32,7 +32,11 @@ const NavItems = ({ options, games, dropdown, handleDropdown }) => {
       {options.map((option, index) =>
         option === "juegos" ? (
           <Fragment>
-            <li className="nav__list--item" onClick={handleDropdown}>
+            <li
+              className="nav__list--item"
+              onClick={handleDropdown}
+              key={index}
+            >
               <Link>
                 <FontAwesomeIcon
                   style={{ width: "40px" }}
@@ -48,7 +52,7 @@ const NavItems = ({ options, games, dropdown, handleDropdown }) => {
             {insertGames()}
           </Fragment>
         ) : (
-          <li className="nav__list--item">
+          <li className="nav__list--item" key={index}>
             <Link to={`/${option}`}>
               <FontAwesomeIcon style={{ width: "40px" }} icon={icons[index]} />
               {option}

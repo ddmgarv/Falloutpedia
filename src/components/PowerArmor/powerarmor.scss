@@ -1,12 +1,7 @@
 @import "../../constants.scss";
 
 .powerArmor {
-  width: $width-wrapper-xl;
-  background-color: $background-wrapper;
-  border-radius: $radius;
-  padding: $padding-wrapper-xl;
-  margin: $margin-wrapper-xl;
-  border: 1px solid #fff;
+  @extend .wrapper;
   .powerArmor__item {
     color: #fff;
     width: 100%;

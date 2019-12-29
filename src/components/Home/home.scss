@@ -5,7 +5,8 @@
   width: $width-wrapper-xl;
   .home__container {
     border: 1px solid #fff;
-    background-image: url(../../assets/img/fwp5.jpg);
+    // background-image: url(../../assets/img/fwp5.jpg);
+    background-color: $background-wrapper;
     background-size: cover;
     border-radius: $radius;
     padding: $padding-wrapper-xl;

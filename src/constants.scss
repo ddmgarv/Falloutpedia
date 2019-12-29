@@ -10,3 +10,12 @@ $background-wrapper: rgba(
   $color: #000000,
   $alpha: 0.7
 );
+
+.wrapper {
+  width: $width-wrapper-xl;
+  background-color: $background-wrapper;
+  border-radius: $radius;
+  padding: $padding-wrapper-xl;
+  margin: $margin-wrapper-xl;
+  border: 1px solid #fff;
+}
