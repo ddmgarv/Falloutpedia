@@ -1,32 +1,32 @@
-@import "../../constants.scss";
+@import '../../constants.scss';
 
 .powerArmor {
-  width: $width-wrapper-xl;
-  background-color: $background-wrapper;
-  border-radius: $radius;
-  padding: $padding-wrapper-xl;
-  margin: $margin-wrapper-xl;
-  border: 1px solid #fff;
-  .powerArmor__item {
-    color: #fff;
-    width: 100%;
-    h3 {
-      margin: 0;
-      padding: 0;
-    }
-    .powerArmor__item--description {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      p {
-        padding: 2%;
-      }
-      img {
-        width: 150px;
-        height: 250px;
-        border-radius: $radius;
-      }
-    }
-  }
+	width: $width-wrapper-xl;
+	background-color: $background-wrapper;
+	border-radius: $radius;
+	padding: $padding-wrapper-xl;
+	margin: $margin-wrapper-xl;
+	border: 1px solid #fff;
+	.powerArmor__container {
+		color: #fff;
+		width: 100%;
+		h3 {
+			margin: 0;
+			padding: 0;
+		}
+		.powerArmor__container--description {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			p {
+				padding: 2%;
+			}
+			img {
+				width: 150px;
+				height: 250px;
+				border-radius: $radius;
+			}
+		}
+	}
 }
