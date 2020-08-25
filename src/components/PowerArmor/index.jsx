@@ -1,29 +1,28 @@
 import React from 'react';
-import { getDocumentFB } from '../../database/firebaseUtils';
+import Loader from '../Utilities/Loader';
+import * as powerArmorActions from '../../redux/actions/powerArmorActions';
 import { storage } from '../../database/';
+import { connect } from 'react-redux';
 import './powerarmor.scss';
 
 class PowerArmor extends React.Component {
-	state = {
-		data: [],
-	};
-
-	async componentDidMount() {
-		const res = await getDocumentFB('/app/power_armor_section');
-
+	componentDidMount() {
+		this.props.getPowerArmorData();
 		// const imgsRef = storage.ref('/gallery/fallout_2');
-
 		// const response = await imgsRef.listAll();
 		// console.log(response);
-
-		this.setState({ data: res.data });
 	}
 
 	render() {
-		const { data } = this.state;
+		const { powerArmorData, loading, error } = this.props;
 		return (
 			<section className='powerArmor'>
-				{data.map((item) => (
+				{loading && (
+					<div className='centered-container-full'>
+						<Loader color={'#7d5a0d'} />
+					</div>
+				)}
+				{powerArmorData.map((item) => (
 					<div className='powerArmor__container' key={item.title}>
 						<h3>{item.title}</h3>
 						<div className='powerArmor__container--description'>
@@ -37,4 +36,6 @@ class PowerArmor extends React.Component {
 	}
 }
 
-export default PowerArmor;
+const mapStateToProps = (state) => state.powerArmorReducer;
+
+export default connect(mapStateToProps, powerArmorActions)(PowerArmor);

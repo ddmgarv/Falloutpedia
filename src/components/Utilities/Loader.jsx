@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
-import { Style } from "react-style-tag";
-const Loader = ({ color }) => (
-  <Fragment>
-    <div className="lds-dual-ring"></div>
-    <Style>
-      {`
+import React, { Fragment } from 'react';
+import { Style } from 'react-style-tag';
+
+const Loader = ({ color = '#7d5a0d' }) => (
+	<>
+		<div className='lds-dual-ring'></div>
+		<Style>
+			{`
             .lds-dual-ring {
                 display: inline-block;
                 width: 64px;
@@ -30,8 +31,8 @@ const Loader = ({ color }) => (
                 }
             }
         `}
-    </Style>
-  </Fragment>
+		</Style>
+	</>
 );
 
 export default Loader;

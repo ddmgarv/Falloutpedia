@@ -5,6 +5,7 @@ import PowerArmor from './components/PowerArmor';
 import Gallery from './components/Gallery';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { auth } from './database';
+import Loader from './components/Utilities/Loader';
 import './App.scss';
 
 function App() {
@@ -21,14 +22,16 @@ function App() {
 	return (
 		<main className='app'>
 			{loading ? (
-				<div>Loading</div>
+				<div className='centered-container-full'>
+					<Loader />
+				</div>
 			) : (
 				<BrowserRouter>
 					<Nav />
-					<Route path={'/'} component={PowerArmor} />
-					<Route path={'/inicio'} component={Home} />
-					<Route path={'/galería'} component={Gallery} />
-					<Route path={'/regístrate'} component={PowerArmor} />
+					<Route path={'/home'} component={Home} />
+					<Route path={'/power_armor'} component={PowerArmor} />
+					<Route path={'/gallery'} component={Gallery} />
+					<Route path={'/registrate'} component={PowerArmor} />
 				</BrowserRouter>
 			)}
 		</main>

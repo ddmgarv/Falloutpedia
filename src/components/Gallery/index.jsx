@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Gallery from './Gallery';
-import { f1i1, f1i2, f1i3, f2i1, f2i2, f2i3, f3i1, f3i2, f3i3, fti1, fti2, fti3, f1wp, f2wp, f3wp, ftwp } from '../../constants/imgs';
+import { f1wp, f2wp, f3wp, ftwp } from '../../constants/imgs';
 import './gallery.scss';
 
 export default class index extends Component {
@@ -14,21 +14,29 @@ export default class index extends Component {
 			f2: [
 				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_2%2Ff2i1.jpg?alt=media&token=6bd3081a-a93e-4481-88fb-61cdd91a4246',
 				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_2%2Ff2i2.jpg?alt=media&token=9647893f-48b3-488f-83f7-84e914e1712b',
-				f2i3,
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_2%2Ff2i3.jpg?alt=media&token=c2bfc797-3bfb-475c-a57a-bfb92029b071',
 			],
-			f3: [f3i1, f3i2, f3i3],
-			ft: [fti1, fti2, fti3],
+			f3: [
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_3%2Ff3i1.jpg?alt=media&token=da8df32c-fdea-49dd-b27e-15d6eab68ba2',
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_3%2Ff3i2.jpg?alt=media&token=41a80370-1ec0-4eec-a1ee-06c93c3ea4ce',
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_3%2Ff3i3.jpg?alt=media&token=1c81bc11-eb14-48be-8769-cf76ee3ff3e5',
+			],
+			ft: [
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_tactics%2Ffti1.jpg?alt=media&token=ad06bb21-4bc9-4784-b188-ac210fcb9fa9',
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_tactics%2Ffti2.jpg?alt=media&token=4f03ece3-8d01-4631-b514-5809734b2896',
+				'https://firebasestorage.googleapis.com/v0/b/falloutpedia.appspot.com/o/gallery%2Ffallout_tactics%2Ffti3.jpg?alt=media&token=ba27d1b1-8c2d-4d47-8565-fff0041f9574',
+			],
 		},
 		fwp: [f1wp, f2wp, ftwp, f3wp],
 		galDisplayStatus: false,
 		galContent: [],
 	};
 
-	unsetGallery() {
+	unsetGallery = () => {
 		this.setState({ galDisplayStatus: false });
-	}
+	};
 
-	renderGallery(gameWp) {
+	renderGallery = (gameWp) => {
 		const { images } = this.state;
 		switch (gameWp) {
 			case f1wp:
@@ -58,7 +66,7 @@ export default class index extends Component {
 			default:
 				break;
 		}
-	}
+	};
 
 	render() {
 		const { fwp, galDisplayStatus, galContent } = this.state;
