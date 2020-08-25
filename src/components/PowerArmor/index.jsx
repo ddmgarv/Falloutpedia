@@ -1,5 +1,6 @@
 import React from 'react';
 import { getDocumentFB } from '../../database/firebaseUtils';
+import { storage } from '../../database/';
 import './powerarmor.scss';
 
 class PowerArmor extends React.Component {
@@ -9,6 +10,12 @@ class PowerArmor extends React.Component {
 
 	async componentDidMount() {
 		const res = await getDocumentFB('/app/power_armor_section');
+
+		// const imgsRef = storage.ref('/gallery/fallout_2');
+
+		// const response = await imgsRef.listAll();
+		// console.log(response);
+
 		this.setState({ data: res.data });
 	}
 
