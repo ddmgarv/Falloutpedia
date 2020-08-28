@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const NavItems = ({ navData, dropdown, handleDropdown }) => {
 	const icons = [faHome, faGamepad, faImage, faInfo, faRegistered];
 	const { options, games } = navData;
+
 	return (
 		<ul className='nav__list'>
 			<li>

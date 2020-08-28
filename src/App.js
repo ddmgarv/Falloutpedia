@@ -6,6 +6,7 @@ import Gallery from './components/Gallery';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { auth } from './database';
 import Loader from './components/Utilities/Loader';
+import RegistrateForm from './components/Registrate';
 import './App.scss';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
 	React.useEffect(() => {
 		(async function () {
 			setLoading(true);
-			const user = await auth.signInWithEmailAndPassword('garv1998131@gmail.com', '2fb8ec45');
+			const user = await auth.signInWithEmailAndPassword('garv1998131@gmail.com', '123456');
 			setLoading(false);
 		})();
 	}, []);
@@ -31,7 +32,7 @@ function App() {
 					<Route path={'/home'} component={Home} />
 					<Route path={'/power_armor'} component={PowerArmor} />
 					<Route path={'/gallery'} component={Gallery} />
-					<Route path={'/registrate'} component={PowerArmor} />
+					<Route path={'/registrate'} component={RegistrateForm} />
 				</BrowserRouter>
 			)}
 		</main>

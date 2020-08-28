@@ -12,7 +12,7 @@ class Nav extends Component {
 	render() {
 		const { loading, error, navData, dropdown } = this.props;
 		return (
-			<nav className='nav__wrapper'>
+			<nav className='nav'>
 				<div className='nav__container'>
 					{loading && (
 						<div className='centered-container-full'>

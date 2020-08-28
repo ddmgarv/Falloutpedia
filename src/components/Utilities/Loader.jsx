@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Style } from 'react-style-tag';
 
 const Loader = ({ color = '#7d5a0d' }) => (
